@@ -1,10 +1,10 @@
-package com.whispercppdemo.recorder
+package kheldiente.app.whispervoiceinput.recorder
 
 import android.annotation.SuppressLint
 import android.media.AudioFormat
 import android.media.AudioRecord
 import android.media.MediaRecorder
-import com.whispercppdemo.media.encodeWaveFile
+import kheldiente.app.whispervoiceinput.media.encodeWaveFile
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.asCoroutineDispatcher
 import kotlinx.coroutines.withContext

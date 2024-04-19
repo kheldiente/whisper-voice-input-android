@@ -1,4 +1,4 @@
-package com.whispercppdemo.ui.main
+package kheldiente.app.whispervoiceinput.ui.main
 
 import android.app.Application
 import android.content.Context
@@ -13,9 +13,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.whispercppdemo.media.decodeWaveFile
-import com.whispercppdemo.recorder.Recorder
-import com.whispercpp.whisper.WhisperContext
+import kheldiente.app.whispervoiceinput.media.decodeWaveFile
+import kheldiente.app.whispervoiceinput.recorder.Recorder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking

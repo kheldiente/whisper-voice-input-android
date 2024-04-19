@@ -1,12 +1,12 @@
-package com.whispercppdemo
+package kheldiente.app.whispervoiceinput
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
-import com.whispercppdemo.ui.main.MainScreen
-import com.whispercppdemo.ui.main.MainScreenViewModel
-import com.whispercppdemo.ui.theme.WhisperCppDemoTheme
+import kheldiente.app.whispervoiceinput.ui.main.MainScreen
+import kheldiente.app.whispervoiceinput.ui.main.MainScreenViewModel
+import kheldiente.app.whispervoiceinput.ui.theme.WhisperCppDemoTheme
 
 class MainActivity : ComponentActivity() {
     private val viewModel: MainScreenViewModel by viewModels { MainScreenViewModel.factory() }

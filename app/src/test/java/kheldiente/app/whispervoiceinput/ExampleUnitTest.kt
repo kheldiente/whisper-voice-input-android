@@ -1,4 +1,4 @@
-package com.whispercppdemo
+package kheldiente.app.whispervoiceinput
 
 import org.junit.Test
 

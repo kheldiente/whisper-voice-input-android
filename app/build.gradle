@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.whispercppdemo'
+    namespace 'kheldiente.app.whispervoiceinput'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.whispercppdemo"
+        applicationId "kheldiente.app.whispervoiceinput"
         minSdk 26
         targetSdk 34
         versionCode 1

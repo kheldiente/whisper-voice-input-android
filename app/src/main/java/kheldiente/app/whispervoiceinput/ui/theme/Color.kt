@@ -1,4 +1,4 @@
-package com.whispercppdemo.ui.theme
+package kheldiente.app.whispervoiceinput.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

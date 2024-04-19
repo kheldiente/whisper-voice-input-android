@@ -1,4 +1,4 @@
-package com.whispercppdemo.ui.main
+package kheldiente.app.whispervoiceinput.ui.main
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.isGranted
 import com.google.accompanist.permissions.rememberPermissionState
-import com.whispercppdemo.R
+import kheldiente.app.whispervoiceinput.R
 
 @Composable
 fun MainScreen(viewModel: MainScreenViewModel) {

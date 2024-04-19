@@ -1,4 +1,4 @@
-package com.whispercppdemo.media
+package kheldiente.app.whispervoiceinput.media
 
 import java.io.ByteArrayOutputStream
 import java.io.File
