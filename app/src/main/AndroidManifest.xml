@@ -14,7 +14,7 @@
         android:theme="@style/Theme.WhisperCppDemo"
         tools:targetApi="31">
         <activity
-            android:name="kheldiente.app.whispervoiceinput.MainActivity"
+            android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.WhisperCppDemo">
             <intent-filter>
@@ -27,6 +27,15 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <service android:name=".WhisperInputService"
+            android:label="Whisper Voice Input"
+            android:permission="android.permission.BIND_INPUT_METHOD"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+            <meta-data android:name="android.view.im" android:resource="@xml/method" />
+        </service>
     </application>
 
 </manifest>
