@@ -19,7 +19,7 @@ import java.io.File
 class WhisperInputService: InputMethodService() {
 
     companion object {
-        private const val IME_SWITCH_OPTION_AVAILABILITY_API_LEVEL = 28
+        private const val IMEI_SWITCH_OPTION_AVAILABILITY_API_LEVEL = 28
         private const val PATH_MODELS = "models/"
     }
 
@@ -33,7 +33,7 @@ class WhisperInputService: InputMethodService() {
     override fun onCreateInputView(): View {
         keyboard = VoiceInputKeyboard(this).apply {
             onClickMic = { isRecording -> doOnClickMic(isRecording) }
-            onClickBackToPrevImei = { switchToPreviousIme() }
+            onClickBackToPrevImei = { switchToPreviousImei() }
             onClickSettings = { goToSettings() }
             onClickBackSpace = { doOnClickBackSpace() }
         }
@@ -151,9 +151,9 @@ class WhisperInputService: InputMethodService() {
         return result
     }
 
-    private fun switchToPreviousIme() {
+    private fun switchToPreviousImei() {
         // Before API Level 28, switchToPreviousInputMethod() was not available
-        if (Build.VERSION.SDK_INT >= IME_SWITCH_OPTION_AVAILABILITY_API_LEVEL) {
+        if (Build.VERSION.SDK_INT >= IMEI_SWITCH_OPTION_AVAILABILITY_API_LEVEL) {
             switchToPreviousInputMethod()
         } else {
             (getSystemService(INPUT_METHOD_SERVICE) as? InputMethodManager)?.run {

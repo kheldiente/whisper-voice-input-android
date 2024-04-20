@@ -31,7 +31,7 @@ class VoiceInputKeyboard @JvmOverloads constructor(
 
     private fun setupViews() {
         with(viewBinding) {
-            btnPreviousIme.setOnClickListener { onClickBackToPrevImei?.invoke() }
+            btnPreviousImei.setOnClickListener { onClickBackToPrevImei?.invoke() }
             btnSettings.setOnClickListener { onClickSettings?.invoke() }
             btnBackspace.setOnClickListener { onClickBackSpace?.invoke() }
             btnMic.setOnClickListener {
