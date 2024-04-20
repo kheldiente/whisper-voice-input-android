@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import kheldiente.app.whispervoiceinput.ui.main.MainScreen
 import kheldiente.app.whispervoiceinput.ui.main.MainScreenViewModel
-import kheldiente.app.whispervoiceinput.ui.theme.WhisperCppDemoTheme
+import kheldiente.app.whispervoiceinput.ui.theme.WhisperVoiceInputTheme
 
 class MainActivity : ComponentActivity() {
     private val viewModel: MainScreenViewModel by viewModels { MainScreenViewModel.factory() }
@@ -14,7 +14,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            WhisperCppDemoTheme {
+            WhisperVoiceInputTheme {
                 MainScreen(viewModel)
             }
         }
