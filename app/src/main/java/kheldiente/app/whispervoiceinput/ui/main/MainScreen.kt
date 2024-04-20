@@ -53,6 +53,7 @@ private fun MainScreen(
                     BenchmarkButton(enabled = canTranscribe, onClick = onBenchmarkTapped)
                     TranscribeSampleButton(enabled = canTranscribe, onClick = onTranscribeSampleTapped)
                 }
+                GrantMicPermissionButton()
                 RecordButton(
                     enabled = canTranscribe,
                     isRecording = isRecording,
@@ -82,6 +83,24 @@ private fun BenchmarkButton(enabled: Boolean, onClick: () -> Unit) {
 private fun TranscribeSampleButton(enabled: Boolean, onClick: () -> Unit) {
     Button(onClick = onClick, enabled = enabled) {
         Text("Transcribe sample")
+    }
+}
+
+@OptIn(ExperimentalPermissionsApi::class)
+@Composable
+private fun GrantMicPermissionButton() {
+    val micPermissionState = rememberPermissionState(
+        permission = android.Manifest.permission.RECORD_AUDIO,
+        onPermissionResult = { _ -> }
+    )
+    Button(
+        onClick = {
+            if (!micPermissionState.status.isGranted) {
+                micPermissionState.launchPermissionRequest()
+            }
+        }
+    ) {
+        Text("Grant mic permission")
     }
 }
 

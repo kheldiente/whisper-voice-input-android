@@ -1,9 +1,14 @@
 package kheldiente.app.whispervoiceinput.recorder
 
+import android.Manifest
 import android.annotation.SuppressLint
+import android.app.Activity
+import android.content.Context
+import android.content.pm.PackageManager
 import android.media.AudioFormat
 import android.media.AudioRecord
 import android.media.MediaRecorder
+import androidx.core.app.ActivityCompat
 import kheldiente.app.whispervoiceinput.media.encodeWaveFile
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.asCoroutineDispatcher
@@ -13,10 +18,11 @@ import java.util.concurrent.Executors
 import java.util.concurrent.atomic.AtomicBoolean
 
 class Recorder {
+
+    private var recorder: AudioRecordThread? = null
     private val scope: CoroutineScope = CoroutineScope(
         Executors.newSingleThreadExecutor().asCoroutineDispatcher()
     )
-    private var recorder: AudioRecordThread? = null
 
     suspend fun startRecording(outputFile: File, onError: (Exception) -> Unit) = withContext(scope.coroutineContext) {
         recorder = AudioRecordThread(outputFile, onError)
@@ -29,6 +35,11 @@ class Recorder {
         recorder?.join()
         recorder = null
     }
+
+    fun isMicPermissionGranted(context: Context): Boolean {
+        return ActivityCompat.checkSelfPermission(context, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED
+    }
+
 }
 
 private class AudioRecordThread(
