@@ -10,6 +10,8 @@
     <string name="microphone">Microphone</string>
     <string name="successfully_set">Successfully set!</string>
     <string name="backspace_button_hint">Backspace Button</string>
-    <string name="btn_previous_ime_hint">Switch To Previous Input Method</string>
-    <string name="whisper_to_input">Whisper To Input</string>
+    <string name="btn_previous_imei_hint">Switch To Previous Input Method</string>
+    <string name="whisper_to_input">Tap record to input your voice</string>
+    <string name="recording_audio">Tap again to stop recording</string>
+    <string name="transcribing_audio">Analyzing audio</string>
 </resources>
