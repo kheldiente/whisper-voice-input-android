@@ -5,6 +5,7 @@ import android.inputmethodservice.InputMethodService
 import android.os.Build
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import com.whispercpp.whisper.WhisperContext
 import kheldiente.app.whispervoiceinput.media.decodeWaveFile
 import kheldiente.app.whispervoiceinput.recorder.Recorder
@@ -32,7 +33,14 @@ class WhisperInputService: InputMethodService() {
 
     override fun onCreateInputView(): View {
         keyboard = VoiceInputKeyboard(this).apply {
-            onClickMic = { isRecording -> doOnClickMic(isRecording) }
+            onClickMic = { isRecording ->
+                if (recorder.isMicPermissionGranted(context)) {
+                    doOnClickMic(isRecording)
+                } else {
+                    setKeyboardState(State.IDLE)
+                    Toast.makeText(context, R.string.grant_microphone_permission, Toast.LENGTH_SHORT).show()
+                }
+            }
             onClickBackToPrevImei = { switchToPreviousImei() }
             onClickSettings = { goToSettings() }
             onClickBackSpace = { doOnClickBackSpace() }
