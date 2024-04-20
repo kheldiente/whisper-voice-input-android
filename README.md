@@ -1,5 +1,6 @@
+# Whisper Voice Input in Android
 
-A voice input app using the on-device-model voice-to-text transcriptions using  [whisper.cpp](https://github.com/ggerganov/whisper.cpp/) that allows users to talk and input voice from the keyboard mic functionality.
+A voice input app using the **ON-DEVICE MODEL** voice-to-text transcriptions using  [whisper.cpp](https://github.com/ggerganov/whisper.cpp/) that allows users to talk and input voice from the keyboard mic functionality.
   
 To run this project:  
   
